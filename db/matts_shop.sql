@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS artist;
 
 CREATE TABLE artists (
   id SERIAL8 PRIMARY KEY,
-  name VARCHAR(255) not null
+  artist_name VARCHAR(255) not null
 );
 
 CREATE TABLE genres (
