@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS hipsterology;
-DROP TABLE IF EXISTS album;
-DROP TABLE IF EXISTS genre;
-DROP TABLE IF EXISTS artist;
+DROP TABLE IF EXISTS albums;
+DROP TABLE IF EXISTS genres;
+DROP TABLE IF EXISTS artists;
 
 
 CREATE TABLE artists (
@@ -34,3 +34,8 @@ CREATE TABLE hipsterology (
   number_in_stock INT4,
   number_on_order INT4
 );
+
+-- INSERT INTO artists (
+--     artist_name ) VALUES (
+--  'Elton John');
+ 
