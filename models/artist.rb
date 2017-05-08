@@ -32,7 +32,7 @@ def album
   return results.map{|album| Album.new (album)}
 end
 
-def Artist.delete()
+def Artist.delete_all()
   sql = "DELETE FROM artists"
   SqlRunner.run(sql)
 end

@@ -4,7 +4,7 @@ require_relative('../models/genre.rb')
 require('pry-byebug')
 
 Album.delete()
-Artist.delete()
+Artist.delete_all()
 Genre.delete()
 
 

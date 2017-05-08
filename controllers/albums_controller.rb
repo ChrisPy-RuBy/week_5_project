@@ -10,6 +10,17 @@ get '/albums' do
   erb(:'albums/index')
 end
 
+get '/albums/new' do
+  @artists = Artist.all
+  @genres = Genre.all
+  erb(:'albums/new')
+end
+
+post '/albums' do
+  @albums = Album.new( params )
+  @albums.save()
+  erb(:'albums/create')
+end
 
 
 

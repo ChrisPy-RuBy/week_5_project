@@ -1,8 +1,11 @@
 
 <h1>Add new genre</h1>
 
-<form action="/genres" method="post">
+<form action="/genres" method="post"> 
+<!-- this dictates what the form will do when something is posted to it -->
 
+  <label for="genre_name_field">Genre name</label>
+  <input type="text" id="genre_name_field" name="genre_name" type="text"/>
 
-
+  <input type="submit" value="Add genre">
 </form>

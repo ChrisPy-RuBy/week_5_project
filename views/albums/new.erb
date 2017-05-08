@@ -1,7 +1,38 @@
-<form action="/albums" method ='POST'>. 
 
-  <lable for="title_field">title</lable>
-  <input type="text" id="title_field" name="title" type='text'/>
+<h1>Add new album</h1>
+
+<form action="/albums" method="post">
+
+  <label for="title_field">title</label>
+  <input id="title_field" type="text" name="title">
+
+  <label for="artist_field">Artist</label>
+  <select id="artist_field" name="artist">
+  <% @artists.each do |artist| %>
+  <option value= <%= artist.id%>>
+  <%=artist.artist_name%></option>
+  <%end%>
+  </select>
+
+  <label for="genre_field">Genre</label>
+  <select id="genre_field" name="genre">
+  <% @genres.each do |genre| %>
+  <option value= <%= genre.id%>>
+  <%=genre.genre_name%></option>
+  <%end%>
+  </select>
+
+  <lable for="release_year_field">Release year</lable>
+  <input id="release_year_field" type="text" name="release_year">
+  <lable for="buy_price_field">Buy Price</lable>
+  <input id="buy_price_field" type="number" name="buy_price">
+  <lable for="sell_price_field">Sell price</lable>
+  <input id="sell_price_field" type="number" name="sell_price">
+  <lable for="number_in_stock_field">Number in stock</lable>
+  <input id="number_in_stock_field" type="number" name="number_in_stock_field">
+  <lable for="number_on_order_field">Number on order</lable>
+  <input id="number_on_order_field" type="number" name="number_on_order">
+
+  <input type="submit" value="Add album">
 
 </form>
-

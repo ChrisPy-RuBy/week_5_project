@@ -11,3 +11,9 @@ end
 get '/genres/new' do
     erb(:'genres/new')
 end
+
+post '/genres' do
+    @genres = Genre.new(params)
+    @genres.save()
+    erb(:'genres/create')
+end
