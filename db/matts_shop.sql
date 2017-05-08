@@ -23,7 +23,8 @@ CREATE TABLE albums (
   buy_price INT4,
   sell_price INT4,
   number_in_stock INT4,
-  number_on_order INT4
+  number_on_order INT4,
+  album_artwork VARCHAR(255)
 );
 
 CREATE TABLE hipsterology (
@@ -35,7 +36,7 @@ CREATE TABLE hipsterology (
   number_on_order INT4
 );
 
--- INSERT INTO artists (
---     artist_name ) VALUES (
---  'Elton John');
+-- INSERT INTO albums (
+--     album_artwork ) VALUES (
+--  'https://vignette3.wikia.nocookie.net/harrypotter/images/9/96/Gryffindor_crest_by_tuliipiie-d491bqc.jpg/revision/latest/scale-to-width-down/394?cb=2013050823170');
  

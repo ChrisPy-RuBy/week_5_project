@@ -2,7 +2,7 @@ require_relative('../db/sql_runner.rb')
 
 class Album
 
-  attr_reader :id, :title, :artist, :genre, :release_year
+  attr_reader :id, :title, :artist, :genre, :release_year, :album_artwork
 
   attr_accessor :buy_price, :sell_price, :number_in_stock, :number_on_order
 
@@ -16,6 +16,7 @@ class Album
     @sell_price = params['sell_price'].to_i
     @number_in_stock = params['number_in_stock'].to_i
     @number_on_order = params['number_on_order'].to_i
+    @album_artwork = params['album_artwork']
   end
 
   def Album.all()
@@ -33,7 +34,8 @@ class Album
     buy_price,
     sell_price,
     number_in_stock,
-    number_on_order
+    number_on_order,
+    album_artwork
     ) VALUES (
     '#{@title}',
     #{@artist},
@@ -42,7 +44,8 @@ class Album
     #{@buy_price},
     #{@sell_price},
     #{@number_in_stock},
-    #{@number_on_order}
+    #{@number_on_order},
+    '#{@album_artwork}'
     ) RETURNING id"
     @id = SqlRunner.run(sql).first['id'].to_i
   end

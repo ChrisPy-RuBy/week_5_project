@@ -48,7 +48,8 @@ album1 = Album.new({
   'buy_price' => 3,
   'sell_price' => 9,
   'number_in_stock' => 2,
-  'number_on_order' => 0
+  'number_on_order' => 0,
+  'album_artwork' => "https://upload.wikimedia.org/wikipedia/en/d/d4/Elton_John_-_Madman_Across_the_Water.jpg"
   })
 
 album2 = Album.new({
@@ -59,7 +60,8 @@ album2 = Album.new({
   'buy_price' => 3,
   'sell_price' => 9,
   'number_in_stock' => 5,
-  'number_on_order' => 2
+  'number_on_order' => 2,
+  'album_artwork' => "https://upload.wikimedia.org/wikipedia/en/e/e0/Bon_iver_album_cover.jpg"
   })
 
 album3 = Album.new({
@@ -70,7 +72,8 @@ album3 = Album.new({
   'buy_price' => 3,
   'sell_price' => 9,
   'number_in_stock' => 1,
-  'number_on_order' => 20
+  'number_on_order' => 20,
+  'album_artwork' => "https://upload.wikimedia.org/wikipedia/en/c/c3/Born_This_Way_album_cover.png"
   })
 
 album4 = Album.new({
@@ -81,7 +84,8 @@ album4 = Album.new({
   'buy_price' => 3,
   'sell_price' => 9,
   'number_in_stock' => 0,
-  'number_on_order' => 0
+  'number_on_order' => 0,
+  'album_artwork' => "https://upload.wikimedia.org/wikipedia/en/8/86/Elton_John_-_Goodbye_Yellow_Brick_Road.jpg"
   })
 
 
@@ -90,5 +94,5 @@ album2.save()
 album3.save()
 album4.save()
 
-# binding.pry
-# nil
+binding.pry
+nil
