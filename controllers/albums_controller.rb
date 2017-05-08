@@ -22,5 +22,23 @@ post '/albums' do
   erb(:'albums/create')
 end
 
+get '/albums/:id' do
+  @albums = Album.find(params[:id])
+  erb(:'albums/show')
+end
+
+get '/albums/:id/edit' do 
+  @albums = Album.find(params[:id])
+  erb(:'albums/edit')
+end
+
+put '/albums/:id' do
+  @albums = Album.new( params )
+  @albums.update_ordering()
+  erb(:'albums/update')
+end 
+
+
+
 
 

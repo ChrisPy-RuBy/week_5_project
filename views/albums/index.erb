@@ -15,6 +15,7 @@
   </tr>
   <% for album in @albums %>
   <tr>
+    <td> <%=album.id%></td>
     <td> <%=album.title%></td>
     <td> <%=album.artist.artist_name%></td>
     <td> <%=album.genre.genre_name%></td>

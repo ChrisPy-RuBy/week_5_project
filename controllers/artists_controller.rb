@@ -18,6 +18,7 @@ post '/artists' do
   erb(:'artists/create')
 end
 
+
 # post '/artists/:id' do
 #   @artists = Artist.new( params )
 #   @pizza.update()
