@@ -1,0 +1,13 @@
+
+<h1>Genres</h1>
+
+<table>
+  <tr>
+    <th>Genre</th>    
+  </tr>
+  <% for genre in @genres %>
+  <tr>
+    <td><%= genre.genre_name%></td>
+  </tr>
+  <% end %>
+</table>

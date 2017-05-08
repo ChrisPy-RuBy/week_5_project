@@ -1,0 +1,31 @@
+
+
+<h1> Albums </h1>
+
+<table>
+  <tr>
+    <th>Album Title</th>
+    <th>Blank</th>
+    <th>Blank</th>
+    <th>Release Year</th>
+    <th>Purchase Price</th>
+    <th>Sell Price</th>
+    <th>Number in stock</th>
+    <th>Number of order</th>
+  </tr>
+  <% for album in @albums %>
+  <tr>
+    <td> <%=album.title%></td>
+    <td> <%=album.artist.artist_name%></td>
+    <td> <%=album.genre.genre_name%></td>
+    <td> <%=album.release_year%></td>
+    <td><%=album.buy_price%></td>
+    <td><%=album.sell_price%></td>
+    <td><%=album.number_in_stock%></td>
+    <td><%=album.number_on_order%></td>
+  </tr>
+  <% end %>
+
+
+
+</table>

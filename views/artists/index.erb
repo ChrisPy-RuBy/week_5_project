@@ -1,0 +1,13 @@
+
+<h1>Artists</h1>
+
+<table>
+  <tr>
+    <th>Name</th>    
+  </tr>
+  <% for artist in @artists %>
+  <tr>
+    <td><%= artist.artist_name%></td>
+  </tr>
+  <% end %>
+</table>

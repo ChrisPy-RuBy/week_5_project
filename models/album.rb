@@ -9,8 +9,8 @@ class Album
   def initialize (params)
     @id = params['id'].to_i
     @title = params['title']
-    @artist = params['artist'].to_i
-    @genre = params['genre'].to_i
+    @artist = params['artist'].to_i #Craig recommends updating these. values to artist_id for claritiy
+    @genre = params['genre'].to_i #please remember that this is actually the id here not the name.
     @release_year = params['release_year']
     @buy_price = params['buy_price'].to_i
     @sell_price = params['sell_price'].to_i
@@ -48,13 +48,15 @@ class Album
   end
 
   def genre()
-    sql = "SELECT g.genre_name, b.title FROM genres g INNER JOIN albums b ON b.genre = g.id"
+    sql = "SELECT * FROM genres g WHERE g.id = #{@genre}"
     genre = SqlRunner.run ( sql )
     return Genre.new (genre.first)
   end
 
   def artist()
-    sql = "SELECT a.artist_name, b.title FROM artists a INNER JOIN albums b ON b.artist = a.id"
+    # sql = "SELECT a.artist_name, b.title FROM artists a INNER JOIN albums b ON b.artist = a.id"
+    sql = "SELECT * FROM artists a WHERE a.id = #{@artist}
+    "
     artist = SqlRunner.run ( sql )
     return Artist.new(artist.first) 
   end
