@@ -18,15 +18,8 @@ post '/artists' do
   erb(:'artists/create')
 end
 
-
-# post '/artists/:id' do
-#   @artists = Artist.new( params )
-#   @pizza.update()
-#   erb(:update)
-# end
-
-
-# post '/artists/:id/delete' do
-#   @artists = Piz.find(params[:id])
-#   @pizza.delete()
-#   redirect '/pizzas'
+get '/artists/:id/albums' do
+  @artist = Artist.find(params[:id ]) #this is finding the artist based on the id passed to it! @artist is used as only one artist is passed to the variable
+  @albums = @artist.album() #this calls the album method associated with the artist class and applies it to the current instance variable.
+  erb(:'artists/albums/index')
+end

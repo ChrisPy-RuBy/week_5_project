@@ -30,8 +30,14 @@ def Genre.delete_all()
   SqlRunner.run(sql)
 end
 
+def Genre.find(id)
+  sql = "SELECT * FROM genres WHERE id = #{id}"
+  results = SqlRunner.run(sql)
+  return Genre.new (results.first())
+end
+
 def album()
-  sql = "SELECT b.title, g.genre_name FROM albums b INNER JOIN genres g ON g.id = b.genre WHERE b.genre = #{@id}" 
+  sql = "SELECT b.* FROM albums b INNER JOIN genres g ON g.id = b.genre WHERE b.genre = #{@id}" 
   results = SqlRunner.run( sql )
   return results.map{|album| Album.new (album)}
 end

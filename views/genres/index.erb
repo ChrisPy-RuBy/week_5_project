@@ -3,11 +3,30 @@
 
 <table>
   <tr>
-    <th>Genre</th>    
+    <th>Genre</th>
+ 
   </tr>
   <% for genre in @genres %>
   <tr>
-    <td><%= genre.genre_name%></td>
+    <td><a href="/genres/<%=genre.id%>/albums"><%= genre.genre_name%></a></td>
   </tr>
   <% end %>
+
+
+
 </table>
+
+
+<form action="/albums" method="POST">
+  <label for="genres">genre: </label>
+  <select id="genres" name="genre_id">
+
+    <% @genres.each do |genre|  %>
+    <option value= <%=genre.id%> > 
+      <%=genre.genre_name%> </option>
+      <% end %>
+
+    </select>
+
+    <input type="submit" value="View albums">
+  </form>

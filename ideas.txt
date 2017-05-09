@@ -1,0 +1,8 @@
+
+  <% for album in genre.album %>
+<tr>
+  <td><%= genre.genre_name%></td>
+    <td><%= album.title %></td>
+</tr>
+  <% end %>
+  <% end %>

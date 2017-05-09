@@ -27,9 +27,17 @@ def save()
 end
 
 def album
-  sql = "SELECT b.title, a.artist_name FROM albums b INNER JOIN artists a ON a.id = b.artist WHERE b.artist = #{@id}"
+  # sql = "SELECT b.title, a.artist_name FROM albums b INNER JOIN artists a ON a.id = b.artist WHERE b.artist = #{@id}"
+#the sequel above will generate errors it is too specific. It will only give the title and artist name. We actually want it to return everything associated.
+  sql = "SELECT b.* FROM albums b INNER JOIN artists a ON a.id = b.artist WHERE b.artist = #{@id}"
   results = SqlRunner.run( sql )
   return results.map{|album| Album.new (album)}
+end
+
+def Artist.find(id)
+  sql = "SELECT * FROM artists WHERE id = #{id}"
+  results = SqlRunner.run ( sql )
+  return Artist.new (results.first())
 end
 
 def Artist.delete_all()
