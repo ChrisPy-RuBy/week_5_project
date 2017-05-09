@@ -1,15 +1,31 @@
-<h1> Inventory Updating </h1>
+<h1>Update Album Details</h1>
 
-<p> Album title: <%= @albums.title() %></p>
-<p> Items in stock: <%= @albums.number_in_stock() %></p>
-<p> Items on order: <%= @albums.number_on_order() %></p>
+<form action='/albums/<%=@albums.id%>' method ='POST'>
 
-<form action='/albums/<%=@albums.id%>/' method ='put'>
+<lable for="Edit title field">Edit Title</lable>
+<input type="text" id="Edit title field" name="title" type='text' value="<%=@albums.title%>"/>
 
-<lable for="Update date items in stock">New stock value</lable>
-<input type="text" id="Update date items in stock" name="number_in_stock" type='number' value="<%=@albums.number_in_stock%>"/>
-<lable for="Update date items on order">Number of items on order</lable>
-<input type="text" id="Update date number of items on order" name="number_on_order" type='number' value="<%=@albums.number_on_order%>"/>
+<lable for="Edit artist id">Edit artist_id</lable>
+<input type="text" id="Edit artist id" name="artist" type='number' value="<%=@albums.artist.artist_name%>"/>
+
+<lable for="Edit genre id">Edit genre_id</lable>
+<input type="text" id="Edit genre id" name="genre" type='text' value="<%=@albums.genre.genre_name%>"/>
+
+<lable for="Edit Release year">Edit Release year</lable>
+<input type="text" id="Edit Release year" name="release_year" type='text' value="<%=@albums.release_year%>"/>
+
+
+<lable for="Edit Buy Price">Edit Buy Price</lable>
+<input type="text" id="Edit Buy Price" name="buy_price" type='number' value="<%=@albums.buy_price%>"/>
+
+<lable for="Edit Sell Price">Edit Sell price</lable>
+<input type="text" id="Edit Sell price" name="sell_price" type='number' value="<%=@albums.sell_price%>"/>
+
+<lable for="Edit number in stock">Edit number in stock</lable>
+<input type="text" id="Edit Release year" name="release_year" type='number' value="<%=@albums.number_in_stock%>"/>
+
+<lable for="Edit album artwork">Edit album artwork</lable>
+<input type="text" id="Edit ablum artowrk" name="album_artwork" type='text' value="<%=@albums.album_artwork%>"/>
 
   <input type="submit" value="Update inventory">
 </form>

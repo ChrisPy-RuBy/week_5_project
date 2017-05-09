@@ -72,6 +72,21 @@ class Album
 
 # how do you output both if you want both at the same time?
 
+
+def update
+  sql = "UPDATE ablums SET
+      title = '#{@title}',
+      artist = #{@artist},
+      genre = #{@genre},
+      release_year = '#{@release_year}',
+      buy_price = #{@buy_price},
+      sell_price = #{@sell_price},
+      number_in_stock = #{@number_in_stock}
+      number_on_order = #{@number_on_order}
+      album_artwork = '#{album_artwork}' "
+      SqlRunner.run( sql )
+end
+
 def update_ordering() 
   sql = "UPDATE albums SET
   number_in_stock = #{@number_in_stock},

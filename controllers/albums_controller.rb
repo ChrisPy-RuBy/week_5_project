@@ -29,10 +29,12 @@ end
 
 get '/albums/:id/edit' do 
   @albums = Album.find(params[:id])
+  @artists = Artist.all
+  @genres = Genre.all
   erb(:'albums/edit')
 end
 
-put '/albums/:id' do
+post '/albums/:id' do
   @albums = Album.new( params )
   @albums.update_ordering()
   erb(:'albums/update')
