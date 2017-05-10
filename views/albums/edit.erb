@@ -5,11 +5,21 @@
 <lable for="Edit title field">Edit Title</lable>
 <input type="text" id="Edit title field" name="title" type='text' value="<%=@albums.title%>"/>
 
-<lable for="Edit artist id">Edit artist_id</lable>
-<input type="text" id="Edit artist id" name="artist" type='number' value="<%=@albums.artist.artist_name%>"/>
+<label for="update_artist_field">Artist</label>
+<select id="update_artist_field" name="artist">
+<% @artists.each do |artist| %>
+<option value= <%= artist.id%>>
+<%=artist.artist_name%></option>
+<%end%>
+</select>
 
-<lable for="Edit genre id">Edit genre_id</lable>
-<input type="text" id="Edit genre id" name="genre" type='text' value="<%=@albums.genre.genre_name%>"/>
+<label for="update_genre_field">Genre</label>
+<select id="update_genre_field" name="genre">
+<% @genres.each do |genre| %>
+<option value= <%= genre.id%>>
+<%=genre.genre_name%></option>
+<%end%>
+</select>
 
 <lable for="Edit Release year">Edit Release year</lable>
 <input type="text" id="Edit Release year" name="release_year" type='text' value="<%=@albums.release_year%>"/>
@@ -22,10 +32,13 @@
 <input type="text" id="Edit Sell price" name="sell_price" type='number' value="<%=@albums.sell_price%>"/>
 
 <lable for="Edit number in stock">Edit number in stock</lable>
-<input type="text" id="Edit Release year" name="release_year" type='number' value="<%=@albums.number_in_stock%>"/>
+<input type="text" id="Edit number in stock" name="number_in_stock" type='number' value="<%=@albums.number_in_stock%>"/>
+
+<lable for="Edit number on order">Edit number on order</lable>
+<input type="text" id="Edit number on order" name="number_on_order" type='number' value="<%=@albums.number_on_order%>"/>
 
 <lable for="Edit album artwork">Edit album artwork</lable>
-<input type="text" id="Edit ablum artowrk" name="album_artwork" type='text' value="<%=@albums.album_artwork%>"/>
+<input type="text" id="Edit ablum artwork" name="album_artwork" type='text' value="<%=@albums.album_artwork%>"/>
 
   <input type="submit" value="Update inventory">
 </form>

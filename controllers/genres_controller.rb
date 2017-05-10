@@ -4,7 +4,7 @@ require ( 'pry-byebug' )
 require_relative ( '../models/genre.rb')
 
 get '/genres' do
-  @genres = Genre.all()
+  @genres = Genre.all.sort {|a1, a2| a1.genre_name <=> a2.genre_name}
   @albums = Album.all()
   erb(:'genres/index')
 end

@@ -6,8 +6,13 @@ require_relative('../models/artist.rb')
 require_relative('../models/genre.rb')
 
 get '/albums' do
-  @albums = Album.all()
+  @albums = Album.all.sort{|a1, a2| a1.title <=> a2.title}
   erb(:'albums/index')
+end
+
+get '/albums/stock' do
+  @albums = Album.all.sort{|a1, a2| a1.number_in_stock <=> a2.number_in_stock}
+  erb(:'albums/stock/index')
 end
 
 get '/albums/new' do

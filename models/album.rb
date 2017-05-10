@@ -74,15 +74,15 @@ class Album
 
 
 def update
-  sql = "UPDATE ablums SET
+  sql = "UPDATE albums SET
       title = '#{@title}',
       artist = #{@artist},
       genre = #{@genre},
       release_year = '#{@release_year}',
       buy_price = #{@buy_price},
       sell_price = #{@sell_price},
-      number_in_stock = #{@number_in_stock}
-      number_on_order = #{@number_on_order}
+      number_in_stock = #{@number_in_stock},
+      number_on_order = #{@number_on_order},
       album_artwork = '#{album_artwork}' "
       SqlRunner.run( sql )
 end
