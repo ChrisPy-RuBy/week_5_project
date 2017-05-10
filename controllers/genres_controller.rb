@@ -26,3 +26,8 @@ get '/genres/:id/albums' do
   @albums = @genre.album
   erb(:'genres/albums/index')
 end
+
+get '/genres/:id/destroy' do
+  Genre.destroy(params[:id])
+  redirect to '/genres'
+end

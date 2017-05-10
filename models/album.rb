@@ -103,16 +103,20 @@ def update_pricing()
   SqlRunner.run( sql )
 end
 
+
 def Album.find(id)
   sql = "SELECT * FROM albums WHERE id=#{id}"
-  results = SqlRunner.run ( sql )
+  results = SqlRunner.run( sql )
   return Album.new( results.first )
 end
 
+def Album.destroy(id)
+  sql = "DELETE FROM albums WHERE id = #{id}"
+  SqlRunner.run( sql )
+end
 
 def Album.delete_all()
   sql = "DELETE FROM albums"
-  SqlRunner.run (sql)
+  SqlRunner.run(sql)
 end
-
 end

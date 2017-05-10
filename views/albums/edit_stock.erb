@@ -1,0 +1,12 @@
+<h1>Update Stock Details</h1>
+
+<form action='/albums/<%=@albums.id%>' method ='POST'>
+
+<lable for="Current number in stock">Edit number in stock</lable>
+<input type="number" id="Current number in stock" name="rnumber_in_stock" type='number' value="<%=@albums.number_in_stock%>"/>
+
+<lable for="Current number on order">Edit number on order </lable>
+<input type="number" id="Current number on order" name="number_on_order" type='number' value="<%=@albums.number_on_order%>"/>
+
+  <input type="submit" value="Update inventory">
+</form>

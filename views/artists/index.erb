@@ -3,11 +3,15 @@
 
 <table>
   <tr>
-    <th>Name</th>    
-  </tr>
+    <th>Name</th> 
+    <th>Remove artist</th>   
+  </tr> 
   <% for artist in @artists %>
   <tr>
     <td><a href="/artists/<%=artist.id%>/albums"><%= artist.artist_name%></a></td>
+    <td><a href="/artists/<%=artist.id%>/destroy">Remove</a></td>
   </tr>
   <% end %>
 </table>
+
+<p><a href="/artists/new">To add new artist, click here></a></p>

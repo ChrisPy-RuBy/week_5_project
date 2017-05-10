@@ -16,8 +16,8 @@
   </tr>
   <% for album in @albums %>
   <tr>
-    <td> <%=album.id%></td>
-    <td> <%=album.title%></td>
+    <td><a href="/albums/<%=album.id%>"><%=album.id%></a></td>
+    <td><a href="/albums/<%=album.id%>/edit"><%=album.title%></a></td>
     <td> <%=album.artist.artist_name%></td>
     <td> <%=album.genre.genre_name%></td>
     <td> <%=album.release_year%></td>
@@ -27,7 +27,5 @@
     <td><%=album.number_on_order%></td>
   </tr>
   <% end %>
-
-
 
 </table>

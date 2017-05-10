@@ -40,6 +40,11 @@ def Artist.find(id)
   return Artist.new (results.first())
 end
 
+def Artist.destroy(id)
+  sql = "DELETE FROM artists WHERE id = #{id}"
+  SqlRunner.run( sql )
+end
+
 def Artist.delete_all()
   sql = "DELETE FROM artists"
   SqlRunner.run(sql)

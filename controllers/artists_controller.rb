@@ -23,3 +23,8 @@ get '/artists/:id/albums' do
   @albums = @artist.album() #this calls the album method associated with the artist class and applies it to the current instance variable.
   erb(:'artists/albums/index')
 end
+
+get '/artists/:id/destroy' do
+  Artist.destroy(params[:id])
+  redirect to ('/artists')
+end

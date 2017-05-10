@@ -34,13 +34,31 @@ get '/albums/:id/edit' do
   erb(:'albums/edit')
 end
 
+get '/albums/:id/edit' do 
+  @albums = Album.find(params[:id])
+  @artists = Artist.all
+  @genres = Genre.all
+  erb(:'albums/edit')
+end
+
+get '/albums/:id/edit_stock' do 
+  @albums = Album.find(params[:id])
+  @artists = Artist.all
+  @genres = Genre.all
+  erb(:'albums/edit_stock')
+end
+
 post '/albums/:id' do
   @albums = Album.new( params )
-  @albums.update_ordering()
+  @albums.update()
   erb(:'albums/update')
 end 
 
-
+# post 'albums/:id/destroy' do
+#   @album = Album.find(param[:id])
+#   @album.destroy()
+#   redirect to ('/albums')
+# end
 
 
 

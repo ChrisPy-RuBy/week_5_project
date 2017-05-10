@@ -25,6 +25,11 @@ def save()
   @id = SqlRunner.run(sql).first['id'].to_i
 end
 
+def Genre.destroy(id)
+  sql = "DELETE FROM genres WHERE id = #{id}"
+  SqlRunner.run ( sql )
+end
+
 def Genre.delete_all()
   sql = "DELETE FROM genres"
   SqlRunner.run(sql)
