@@ -78,6 +78,13 @@ post '/albums/order/:id' do
   erb(:'albums/order/update')
 end
 
+post '/albums/sale/:id' do
+  @album = Album.find(params[:id])
+  @album.update_sale()
+  redirect to ('/albums/stock')
+end
+
+
 
 
 

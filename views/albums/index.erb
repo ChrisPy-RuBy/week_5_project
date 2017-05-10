@@ -4,15 +4,15 @@
 
 <table>
   <tr>
-    <th>Album id</th>
+    <th>Album info</th>
     <th>Album Title</th>
     <th>Album artist</th>
     <th>Album genre</th>
-    <th>Release Year</th>
-    <th>Purchase Price</th>
     <th>Sell Price</th>
     <th>Number in stock</th>
     <th>Number of order</th>
+    <th>Item Sold</th>
+    <th>Update Inventory</th>
   </tr>
   <% for album in @albums %>
   <tr>
@@ -20,11 +20,18 @@
     <td><a href="/albums/<%=album.id%>/edit"><%=album.title%></a></td>
     <td> <%=album.artist.artist_name%></td>
     <td> <%=album.genre.genre_name%></td>
-    <td> <%=album.release_year%></td>
-    <td><%=album.buy_price%></td>
     <td><%=album.sell_price%></td>
     <td><a href="/albums/stock/<%=album.id%>"><%=album.number_in_stock%></td>
     <td><%=album.number_on_order%></td>
+        <td><form action='/albums/sale/<%=album.id%>' method ='POST'>
+        <label for="item sold"></label>
+        <input type="submit" value="Update inventory">
+        </form></td>
+        
+        <td><form action='/albums/order/<%=album.id%>' method ='POST'>
+    <label for="Order has arrived"></label>
+    <input type="submit" value="Update inventory">
+    </form></td>
   </tr>
   <% end %>
 

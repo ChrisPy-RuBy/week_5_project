@@ -75,44 +75,57 @@ class Album
 
 def update
   sql = "UPDATE albums SET
-      title = '#{@title}',
-      artist = #{@artist},
-      genre = #{@genre},
-      release_year = '#{@release_year}',
-      buy_price = #{@buy_price},
-      sell_price = #{@sell_price},
-      number_in_stock = #{@number_in_stock},
-      number_on_order = #{@number_on_order},
-      album_artwork = '#{album_artwork}'
-      WHERE id = #{@id} "
-      SqlRunner.run( sql )
+  title = '#{@title}',
+  artist = #{@artist},
+  genre = #{@genre},
+  release_year = '#{@release_year}',
+  buy_price = #{@buy_price},
+  sell_price = #{@sell_price},
+  number_in_stock = #{@number_in_stock},
+  number_on_order = #{@number_on_order},
+  album_artwork = '#{album_artwork}'
+  WHERE id = #{@id} "
+  SqlRunner.run( sql )
 end
 
 
 def update_order() 
   sql = "UPDATE albums SET 
-    number_in_stock = #{@number_in_stock},
-    number_on_order = #{@number_on_order} 
-    WHERE id = #{@id} "
+  number_in_stock = #{@number_in_stock},
+  number_on_order = #{@number_on_order} 
+  WHERE id = #{@id} "
   SqlRunner.run( sql )
 end
 
 
 def update_ordering() 
-  sql = "UPDATE albums SET 
-    number_in_stock = #{@number_in_stock},
-    number_on_order = #{@number_on_order} 
-    WHERE id = #{@id} "
   @number_in_stock += @number_on_order
   @number_on_order = 0
+  sql = "UPDATE albums SET 
+  number_in_stock = #{@number_in_stock},
+  number_on_order = #{@number_on_order} 
+  WHERE id = #{@id} "
+
+  SqlRunner.run( sql )
+end
+
+def update_sale() 
+  if @number_in_stock > 0
+    @number_in_stock -= 1
+  else
+    @number_in_stock == 0 
+  end
+  sql = "UPDATE albums SET 
+  number_in_stock = #{@number_in_stock}
+  WHERE id = #{@id} "
   SqlRunner.run( sql )
 end
 
 def update_pricing() 
   sql = "UPDATE albums SET 
-    buy_price = #{@buy_price},
-    sell_price = #{@sell_price} 
-    WHERE id = #{@id} "
+  buy_price = #{@buy_price},
+  sell_price = #{@sell_price} 
+  WHERE id = #{@id} "
   SqlRunner.run( sql )
 end
 
