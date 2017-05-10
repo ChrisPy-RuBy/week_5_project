@@ -83,7 +83,8 @@ def update
       sell_price = #{@sell_price},
       number_in_stock = #{@number_in_stock},
       number_on_order = #{@number_on_order},
-      album_artwork = '#{album_artwork}' "
+      album_artwork = '#{album_artwork}'
+      WHERE id = #{@id} "
       SqlRunner.run( sql )
 end
 
