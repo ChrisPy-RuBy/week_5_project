@@ -14,13 +14,13 @@
 <lable for="Update date items on order">Number of items on order</lable>
 <input type="text" id="Update date number of items on order" name="number_on_order" type='number' value="<%=@albums.number_on_order%>"/>
 
-  <input type="submit" value="Update inventory">
+  <input type="submit" value="Update inventory" class="button">
 </form>
 
 <form action='/albums/<%=@albums.id%>/destroy' method ='POST'>
 
-<label for="Delete this item">Remove from stock</label>
-<input type="submit" value="Delete inventory">
+<label for="Delete this item"></label>
+<input type="submit" value="Delete inventory" class="button">
 </form>
 
 

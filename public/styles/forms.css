@@ -1,0 +1,10 @@
+input, 
+select,
+textarea {
+  border: 1px solid;
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  padding: 16px 32px;
+  font-size: 16px;
+}

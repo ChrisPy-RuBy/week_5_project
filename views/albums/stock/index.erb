@@ -1,5 +1,5 @@
 
-<h1> Albums </h1>
+<h1> ALBUMS </h1>
 
 <table>
   <tr>
@@ -7,7 +7,6 @@
     <th>Album Title</th>
     <th>Album artist</th>
     <th>Album genre</th>
-    <th>Release Year</th>
     <th>Purchase Price</th>
     <th>Sell Price</th>
     <th>Number in stock</th>
@@ -21,7 +20,6 @@
     <td><a href="/albums/<%=album.id%>/edit"><%=album.title%></a></td>
     <td> <%=album.artist.artist_name%></td>
     <td> <%=album.genre.genre_name%></td>
-    <td> <%=album.release_year%></td>
     <td><%=album.buy_price%></td>
     <td><%=album.sell_price%></td>
     <td><a href="/albums/stock/<%=album.id%>"><%=album.number_in_stock%></td>
@@ -40,4 +38,4 @@
 
 </table>
 
-<p><a href="/albums">sort by title</a></p>
+<p><a href="/albums" class="button">sort by title</a></p>
