@@ -41,6 +41,12 @@ def Genre.find(id)
   return Genre.new (results.first())
 end
 
+def Genre.count
+  sql = "SELECT * FROM genres"
+  results = SqlRunner ( sql )
+  results.count()
+end
+
 def album()
   sql = "SELECT b.* FROM albums b INNER JOIN genres g ON g.id = b.genre WHERE b.genre = #{@id}" 
   results = SqlRunner.run( sql )

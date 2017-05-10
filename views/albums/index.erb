@@ -23,11 +23,11 @@
     <td> <%=album.release_year%></td>
     <td><%=album.buy_price%></td>
     <td><%=album.sell_price%></td>
-    <td><%=album.number_in_stock%></td>
+    <td><a href="/albums/stock/<%=album.id%>"><%=album.number_in_stock%></td>
     <td><%=album.number_on_order%></td>
   </tr>
   <% end %>
 
 </table>
-
+<p>Total number of albums = <%=@albums.count%></p>
 <p><a href="/albums/stock">sort by number</a></p>

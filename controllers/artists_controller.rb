@@ -10,6 +10,7 @@ require_relative ( '../models/artist.rb')
 
 get '/artists' do
   @artists= Artist.all.sort { |a1, a2| a1.artist_name <=> a2.artist_name}
+  @count = Artist.count
   erb(:'artists/index') 
 end
 

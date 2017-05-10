@@ -50,4 +50,9 @@ def Artist.delete_all()
   SqlRunner.run(sql)
 end
 
+def Artist.count()
+    sql = "SELECT * FROM artists"
+    results = SqlRunner.run(sql)
+    results.count
+end
 end

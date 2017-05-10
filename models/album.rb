@@ -88,11 +88,23 @@ def update
       SqlRunner.run( sql )
 end
 
+
+def update_order() 
+  sql = "UPDATE albums SET 
+    number_in_stock = #{@number_in_stock},
+    number_on_order = #{@number_on_order} 
+    WHERE id = #{@id} "
+  SqlRunner.run( sql )
+end
+
+
 def update_ordering() 
-  sql = "UPDATE albums SET
-  number_in_stock = #{@number_in_stock},
-  number_on_order = #{@number_on_order}
-  WHERE id = #{ @id } "
+  sql = "UPDATE albums SET 
+    number_in_stock = #{@number_in_stock},
+    number_on_order = #{@number_on_order} 
+    WHERE id = #{@id} "
+  @number_in_stock += @number_on_order
+  @number_on_order = 0
   SqlRunner.run( sql )
 end
 
@@ -119,5 +131,17 @@ end
 def Album.delete_all()
   sql = "DELETE FROM albums"
   SqlRunner.run(sql)
+end
+
+def Album.count()
+  sql = "SELECT * FROM albums"
+  results = SqlRunner.run( sql )
+  results.count
+end
+
+def add_stock()
+  sql = "SELECT number_on_order, number_in_stock FROM albums WHERE id = #{id}"
+  results = SqlRunner.run ( sql )
+  results.first
 end
 end

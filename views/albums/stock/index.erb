@@ -12,6 +12,7 @@
     <th>Sell Price</th>
     <th>Number in stock</th>
     <th>Number of order</th>
+    <th>Order arrival</th>
   </tr>
   <% for album in @albums %>
   <tr>
@@ -22,8 +23,12 @@
     <td> <%=album.release_year%></td>
     <td><%=album.buy_price%></td>
     <td><%=album.sell_price%></td>
-    <td><%=album.number_in_stock%></td>
+    <td><a href="/albums/stock/<%=album.id%>"><%=album.number_in_stock%></td>
     <td><%=album.number_on_order%></td>
+    <td><form action='/albums/order/<%=album.id%>' method ='POST'>
+<label for="Order has arrived"></label>
+<input type="submit" value="Update inventory">
+</form></td>
   </tr>
   <% end %>
 

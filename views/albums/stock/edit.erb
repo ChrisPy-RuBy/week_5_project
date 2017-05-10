@@ -1,0 +1,17 @@
+
+
+<h1> Inventory Updating </h1>
+
+<p> Album title: <%= @albums.title() %></p>
+<p> Items in stock: <%= @albums.number_in_stock() %></p>
+<p> Items on order: <%= @albums.number_on_order() %></p>
+
+<form action='/albums/stock/<%=@albums.id%>' method ='POST'>
+
+<lable for="Update date items in stock">New stock value</lable>
+<input type="number" id="Update date items in stock" name="number_in_stock" type='number' value="<%=@albums.number_in_stock%>"/>
+<lable for="Update date items on order">Number of items on order</lable>
+<input type="number" id="Update date number of items on order" name="number_on_order" type='number' value="<%=@albums.number_on_order%>"/>
+
+  <input type="submit" value="Update inventory">
+</form>
