@@ -3,8 +3,13 @@ require ('sinatra/contrib/all')
 require ('pry-byebug')
 require_relative ( '../models/artist.rb')
 
+# get '/artists' do
+#   @artists = Artist.all()
+#   erb(:'artists/index') 
+# end
+
 get '/artists' do
-  @artists = Artist.all()
+  @artists= Artist.all.sort { |a1, a2| a1.artist_name <=> a2.artist_name}
   erb(:'artists/index') 
 end
 

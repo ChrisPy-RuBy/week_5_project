@@ -54,11 +54,11 @@ post '/albums/:id' do
   erb(:'albums/update')
 end 
 
-# post 'albums/:id/destroy' do
-#   @album = Album.find(param[:id])
-#   @album.destroy()
-#   redirect to ('/albums')
-# end
+post '/albums/:id/destroy' do
+  @album = Album.find(params[:id])
+  @album.destroy()
+  redirect to ('/albums')
+end
 
 
 

@@ -110,8 +110,8 @@ def Album.find(id)
   return Album.new( results.first )
 end
 
-def Album.destroy(id)
-  sql = "DELETE FROM albums WHERE id = #{id}"
+def destroy()
+  sql = "DELETE FROM albums WHERE id = #{@id}"
   SqlRunner.run( sql )
 end
 
